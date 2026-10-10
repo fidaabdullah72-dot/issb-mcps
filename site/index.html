@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B4330">
+<title>ISSB Green Academy — MCQs Sheet</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- Loading -->
+<section id="screen-loading" class="brand-bg">
+  <div>
+    <div class="spinner" style="margin:0 auto"></div>
+    <div class="loading-text">Sheet khul rahi hai…</div>
+  </div>
+</section>
+
+<!-- Login -->
+<section id="screen-login" class="brand-bg hidden">
+  <div class="auth-card">
+    <div class="brand-mark" id="login-emblem"></div>
+    <h1 id="academy-name">ISSB Green Academy</h1>
+    <p class="sub" id="sheet-subtitle">PMA Long Course — Initial Test MCQs Sheet</p>
+
+    <div id="inapp-warning" class="notice warn hidden">
+      Aap yeh link kisi app (Facebook/Instagram) ke andar khol rahe hain. Isay <b>Chrome</b> (Android) ya
+      <b>Safari</b> (iPhone) mein kholein, kyunke sheet usi browser se lock hogi jahan aap pehli dafa kholenge.
+      <div class="btn-row" style="margin-top:10px"><button type="button" class="btn small gold" id="copy-link">Link copy karein</button></div>
+    </div>
+
+    <form id="login-form" autocomplete="on" novalidate>
+      <label>Phone number
+        <input id="phone" type="tel" inputmode="tel" placeholder="03XX XXXXXXX" autocomplete="tel" required>
+      </label>
+      <label>Access code
+        <input id="code" class="code-input" type="text" placeholder="XXXXXX" maxlength="8" autocomplete="off" autocapitalize="characters" spellcheck="false" required>
+      </label>
+      <button type="submit" class="btn primary block" id="login-btn">Sheet kholein</button>
+      <div id="login-error" class="notice error hidden" role="alert"></div>
+    </form>
+
+    <p class="fine">🔒 Yeh sheet sirf <b>ek phone</b> par khulti hai. Jis phone par aap pehli dafa kholenge, sheet usi se lock ho jayegi.</p>
+    <a class="help-link" id="help-link" target="_blank" rel="noopener">Madad chahiye? WhatsApp karein</a>
+  </div>
+</section>
+
+<!-- Error -->
+<section id="screen-error" class="brand-bg hidden">
+  <div class="auth-card">
+    <div class="brand-mark" id="error-emblem"></div>
+    <p id="error-text" class="notice error"></p>
+    <div class="btn-row" style="justify-content:center;margin-top:14px">
+      <button class="btn primary" id="retry-btn">Dobara koshish karein</button>
+    </div>
+  </div>
+</section>
+
+<!-- Sheet -->
+<section id="screen-sheet" class="viewer-sheet hidden">
+  <header class="topbar">
+    <div class="brand">
+      <span id="top-emblem"></span>
+      <div class="brand-text">
+        <div class="brand-name">ISSB Green Academy</div>
+        <div class="who" id="who"></div>
+      </div>
+    </div>
+    <button class="btn ghost hidden" id="practice-btn" type="button">Practice</button>
+    <button class="btn ghost" id="toc-btn" type="button" aria-label="Sections">☰</button>
+  </header>
+  <div class="scorebar hidden" id="scorebar"></div>
+  <main id="sheet" class="sheet"></main>
+  <div class="sheet-footer" id="sheet-footer"></div>
+  <button class="to-top" id="to-top" type="button" aria-label="Upar jayen">↑</button>
+  <div id="toc" class="toc hidden"><div class="toc-panel" id="toc-panel"></div></div>
+  <div id="watermark" class="watermark"></div>
+  <div id="shield" class="shield hidden">🔒 Sheet chhupa di gayi hai.<br>Wapas aane par nazar aayegi.</div>
+</section>
+
+<script src="config.js"></script>
+<script src="assets/vendor/purify.min.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/viewer.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B4330">
+<title>Admin — ISSB Green Academy</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- Admin login -->
+<section id="screen-login" class="brand-bg">
+  <div class="auth-card">
+    <div class="brand-mark" id="login-emblem"></div>
+    <h1>Admin Panel</h1>
+    <p class="sub">ISSB Green Academy — Secure Sheet</p>
+    <form id="login-form">
+      <label>Admin password
+        <input id="admin-pass" type="password" autocomplete="current-password" required>
+      </label>
+      <button class="btn primary block" id="login-btn" type="submit">Login</button>
+      <div id="login-error" class="notice error hidden" role="alert"></div>
+    </form>
+  </div>
+</section>
+
+<!-- Dashboard -->
+<section id="screen-admin" class="hidden">
+  <header class="admin-top">
+    <span id="top-emblem"></span>
+    <div class="title">Admin Panel</div>
+    <a class="btn ghost small" href="./" target="_blank" rel="noopener">Student page ↗</a>
+    <button class="btn ghost small" id="logout-btn" type="button">Logout</button>
+  </header>
+
+  <div class="admin-wrap">
+    <div id="doc-warning" class="notice warn hidden">Abhi tak koi sheet upload nahi hui. Neeche "Sheet upload" se Word ya HTML file upload karein.</div>
+
+    <div class="stats-row">
+      <div class="stat"><div class="n" id="st-total">0</div><div class="l">Kul buyers</div></div>
+      <div class="stat"><div class="n" id="st-opened">0</div><div class="l">Sheet khol chuke</div></div>
+      <div class="stat alert"><div class="n" id="st-attempts">0</div><div class="l">Doosre phone ki koshishein</div></div>
+      <div class="stat"><div class="n" id="st-blocked">0</div><div class="l">Blocked</div></div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Add buyer -->
+      <div class="card">
+        <h2>➕ Naya buyer add karein</h2>
+        <p class="hint">Payment check karne ke baad yahan buyer add karein. Code khud ban jayega, phir WhatsApp par bhej dein.</p>
+        <form id="add-form">
+          <div class="form-row">
+            <label>Naam<input id="add-name" type="text" placeholder="Ali Khan" required></label>
+            <label>Phone (WhatsApp)<input id="add-phone" type="tel" placeholder="03XX XXXXXXX" required></label>
+          </div>
+          <label>Note (optional)<input id="add-note" type="text" placeholder="JazzCash Rs 499, TID 12345"></label>
+          <button class="btn primary" type="submit" id="add-btn">Buyer add karein</button>
+        </form>
+        <div id="add-result"></div>
+      </div>
+
+      <!-- Upload sheet -->
+      <div class="card">
+        <h2>📄 Sheet upload</h2>
+        <p class="hint" id="doc-info">Word (.docx) ya HTML file upload karein. Nayi file purani ko replace kar degi.</p>
+        <label>Sheet ka naam<input id="doc-title" type="text" placeholder="PMA Initial Test MCQs Sheet"></label>
+        <label>File (.docx / .html)<input id="doc-file" type="file" accept=".docx,.html,.htm"></label>
+        <div id="doc-status" class="hint"></div>
+        <div class="btn-row">
+          <button class="btn gold" id="doc-publish" type="button" disabled>Publish karein</button>
+        </div>
+        <div id="doc-preview" class="preview hidden"><div class="sheet" id="doc-preview-inner"></div></div>
+      </div>
+    </div>
+
+    <!-- Buyers -->
+    <div class="card">
+      <h2>👥 Buyers</h2>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Naam, phone ya code se dhoondein">
+        <button class="btn ghost small" id="refresh-btn" type="button">↻ Refresh</button>
+      </div>
+      <div id="buyers"></div>
+    </div>
+
+    <!-- Activity -->
+    <div class="card">
+      <h2>🕒 Activity</h2>
+      <p class="hint">Laal entries ka matlab: kisi ne code doosre phone par kholne ki koshish ki (yani share kiya).</p>
+      <div id="events" class="events"></div>
+    </div>
+  </div>
+</section>
+
+<script src="config.js"></script>
+<script src="assets/vendor/purify.min.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>

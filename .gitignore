@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+# MCQs ki asal file kabhi repo mein na daalein (repo public ho sakta hai)
+*.pdf
+sheet-upload.html
+sheet-print.html
