@@ -61,9 +61,10 @@ git push -u origin main
 
 **Vercel (recommended):**
 1. vercel.com → **Add New → Project** → apna GitHub repo import karein
-2. **Root Directory: `site`** select karein
-3. Framework Preset: **Other** · Build command khali chhor dein
-4. **Deploy** → aap ko link mil jayega, jaise `https://issb-green-sheet.vercel.app`
+2. Framework Preset: **Other** · Build command khali chhor dein
+   (Root Directory kuch bhi ho, chalega: repo ka `vercel.json` khud `site` folder dikhata hai)
+3. **Deploy** → aap ko link mil jayega, jaise `https://issb-green-sheet.vercel.app`
+4. Har `git push` par Vercel khud naya version deploy kar deta hai
 
 **Render (doosra tareeqa):**
 1. render.com → **New → Static Site** → repo select karein
